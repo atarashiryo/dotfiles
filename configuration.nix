@@ -21,6 +21,7 @@
     }; 
   };
 
+  # Set up networking
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -124,7 +125,6 @@
      grim
      cliphist
      # Extra utility
-     lazygit
      git
      unzip
      zip
@@ -159,10 +159,15 @@
     home.stateVersion = "23.11";
   };
 
-  # All can read and write /etc/nixos
-  environment.etc."nixos" = {
-      uid = "666";
+  # Delete generation older than 7 days
+  nix.gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
   };
+
+  
+  nix.nixPath = [ "nixos-config=/home/rev/Dotfiles/configuration.nix" ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
