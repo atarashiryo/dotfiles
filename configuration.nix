@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       <home-manager/nixos>
-      ./config/config.nix
+      ./config
     ];
 
   # Bootloader.
@@ -167,7 +167,11 @@
   };
 
   
-  nix.nixPath = [ "nixos-config=/home/rev/Dotfiles/configuration.nix" ];
+  nix.nixPath = [ 
+    "nixos-config=/home/rev/Dotfiles/configuration.nix" 
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "/nix/var/nix/profiles/per-user/root/channels"
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

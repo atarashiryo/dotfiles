@@ -2,6 +2,9 @@
 
 {
   home-manager.users.rev = { pkgs, ... }: {
-    xdg.configFile."rofi".source = ../rofi;
+    programs.rofi = {
+      enable = true;
+      theme = ./theme.rasi;
+    };
   };
 }
