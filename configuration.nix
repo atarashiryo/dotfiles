@@ -3,9 +3,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./apps
+      ./config
       ./hardware-configuration.nix
       <home-manager/nixos>
-      ./config
     ];
 
   # Bootloader.
@@ -95,44 +96,12 @@
     description = "Rev";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    # firefox
-    #  thunderbird
     ];
   };
 
   # Enable unfree software
   nixpkgs.config.allowUnfree = true;
 
-  # Use hyprland
-  programs.hyprland = {
-     enable = true;
-     xwayland.enable = true;
-  };
-
-  # Install some programs
-  environment.systemPackages = with pkgs; [
-     # Application
-     firefox
-     libreoffice-fresh
-     kitty
-     # Needed for rice/hyprland config
-     waybar
-     rofi-wayland
-     dunst
-     waypaper
-     swaybg       
-     kdePackages.polkit-kde-agent-1
-     grim
-     cliphist
-     # Extra utility
-     git
-     unzip
-     zip
-     neovim
-     btop
-     neofetch
-  ];
-  
   # Fonts!
   fonts.packages = with pkgs; [
      (nerdfonts.override { fonts = [ "FiraCode" ]; })
