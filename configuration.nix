@@ -94,9 +94,7 @@
   users.users.rev = {
     isNormalUser = true;
     description = "Rev";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Enable unfree software
@@ -125,7 +123,7 @@
 
   # Home Manager State Version
   home-manager.users.rev = { pkgs, ... }: {
-    home.stateVersion = "23.11";
+    home.stateVersion = "24.05";
   };
 
   # Delete generation older than 7 days
