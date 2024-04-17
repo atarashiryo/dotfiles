@@ -10,5 +10,6 @@
     ./terminal
     ./office
     ./music
+    ./files
   ];
 }
