@@ -1,12 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [ 
-    ./hypr
-    ./waybar
-    ./kitty
+  imports = [
     ./dunst
+    ./hypr
+    ./kitty
     ./rofi
+    ./themes
+    ./waybar
   ];
 }
-

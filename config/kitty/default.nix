@@ -78,6 +78,9 @@
         # white
         color7  #BAC2DE
         color15 #A6ADC8
+  
+        # Padding
+        window_padding_width 8
       '';
     };
   };

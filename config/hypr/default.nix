@@ -50,13 +50,19 @@
         
             blur {
                 enabled = true
-                size = 6
-                passes = 1
+                size = 12
+                passes = 4
+        	xray = true
+                new_optimizations = on
+                ignore_opacity = true
             }
+  
+            active_opacity = 0.8
+            inactive_opacity = 0.6
         
-            drop_shadow = false
-            shadow_range = 10
-            shadow_render_power = 5
+            drop_shadow = true
+            shadow_range = 30
+            shadow_render_power = 3
             col.shadow = rgba(11111bee)
         }
         
@@ -99,7 +105,7 @@
         $mainMod = SUPER
         
         # Binds
-        bind = $mainMod, RETURN, exec, kitty
+        bind = $mainMod, RETURN, exec, wezterm
         bind = $mainMod, Q, killactive,
         bind = $mainMod CTRL, Q, exit,
         bind = $mainMod, F, exec, nemo
