@@ -5,5 +5,8 @@
     btop
     neofetch
     nitch
+    distrobox
   ];
+
+  virtualisation.docker.enable = true;
 }
