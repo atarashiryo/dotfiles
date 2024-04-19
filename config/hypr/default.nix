@@ -105,7 +105,7 @@
         $mainMod = SUPER
         
         # Binds
-        bind = $mainMod, RETURN, exec, wezterm
+        bind = $mainMod, RETURN, exec, kitty
         bind = $mainMod, Q, killactive,
         bind = $mainMod CTRL, Q, exit,
         bind = $mainMod, F, exec, nemo
