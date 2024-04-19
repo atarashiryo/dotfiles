@@ -123,7 +123,7 @@
 
   # Home Manager State Version
   home-manager.users.rev = { pkgs, ... }: {
-    home.stateVersion = "24.05";
+    home.stateVersion = "23.11";
   };
 
   # Delete generation older than 7 days
