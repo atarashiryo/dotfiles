@@ -3,6 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     kitty
-    wezterm
+    btop
+    neofetch
+    nitch
+    distrobox
   ];
+
+  virtualisation.docker.enable = true;
 }
