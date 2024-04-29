@@ -110,7 +110,7 @@
         bind = $mainMod CTRL, Q, exit,
         bind = $mainMod, F, exec, nemo
         bind = $mainMod, V, togglefloating,
-        bind = $mainMod, A, exec, rofi -show drun -disable-history
+        bind = $mainMod, A, exec, rofi -show drun
         bind = $mainMod, T, exec, kitty nvim
         bind = $mainMod, W, exec, waypaper
         bind = $mainMod, B, exec, firefox

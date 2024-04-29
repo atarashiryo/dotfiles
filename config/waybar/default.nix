@@ -16,7 +16,7 @@
         "modules-right" = ["battery" "pulseaudio" "clock"];
         "custom/rofi" = {
           "format" = "";
-          "on-click" = "rofi -show drun -disable-history";
+          "on-click" = "rofi -show drun";
         };
         "hyprland/workspaces" = {
           "on-click" = "activate";
