@@ -6,7 +6,6 @@
       ./apps
       ./config
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   # Bootloader.
