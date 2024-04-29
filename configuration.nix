@@ -21,7 +21,7 @@
     }; 
   };
 
-  # Enable flakes and home-manager
+  # Enable flakes 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set up networking
@@ -57,10 +57,6 @@
   services.xserver = {
     enable = true;
     displayManager = {
-      autoLogin = {
-	  enable = false;
-	  user = "rev";
-      };
       sddm = {
         enable = true;
       };
@@ -122,11 +118,6 @@
 
   # Disable an annoying git GUI
   programs.ssh.askPassword = "";
-
-  # Home Manager State Version
-  home-manager.users.rev = { pkgs, ... }: {
-    home.stateVersion = "23.11";
-  };
 
   # Delete generation older than 7 days
   nix.gc = {
