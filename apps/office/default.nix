@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     libreoffice-fresh
     zoom-us
+    musescore
   ];
 }
