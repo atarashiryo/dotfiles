@@ -8,7 +8,7 @@
     ./games
     ./terminal
     ./office
-    ./music
+    ./multimedia
     ./files
   ];
 }
