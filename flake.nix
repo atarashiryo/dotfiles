@@ -20,7 +20,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.rev = import ./home.nix;
+	  home-manager.extraSpecialArgs = inputs;
+          home-manager.users.rev = import ./config;
         }
       ];
     };
