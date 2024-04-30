@@ -56,7 +56,8 @@
               ignore_opacity = true
           }
                                                                                                                              
-          active_opacity = 0.8
+          active_opacity = 0.85
+          inactive_opacity = 0.85
       
           drop_shadow = true
           shadow_range = 30
