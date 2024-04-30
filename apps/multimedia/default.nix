@@ -8,6 +8,5 @@ in
     kdenlive
     g4music
     python312Packages.deemix
-    spotify
   ];
 }
