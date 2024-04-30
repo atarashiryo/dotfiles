@@ -7,11 +7,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -19,9 +16,9 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+
 	  home-manager.extraSpecialArgs = inputs;
-          home-manager.users.rev = import ./config;
+          home-manager.users.rev = import ./home;
         }
       ];
     };

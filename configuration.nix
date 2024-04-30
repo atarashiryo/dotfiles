@@ -4,7 +4,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./apps
-      ./config
       ./hardware-configuration.nix
     ];
 
@@ -56,12 +55,6 @@
   # Xserver
   services.xserver = {
     enable = true;
-    displayManager = {
-      sddm = {
-        enable = true;
-      };
-    };
-    libinput.enable = true;
     xkb = { 
       layout = "us"; 
       variant = ""; 
@@ -70,6 +63,14 @@
       xterm
     ];
   };
+
+  services.displayManager.sddm = { 
+    enable = true; 
+    wayland.enable = true;
+    theme = "chili";
+  };
+
+  services.libinput.enable = true;
 
   # Enable printing
   services.printing.enable = true;
