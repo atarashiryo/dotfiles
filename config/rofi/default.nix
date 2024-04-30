@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  xdg.configFile."rofi/config".text = 
-   '' 
+  home.file.".config/rofi/config.rasi".text = 
+   ''
    configuration {
      display-drun: " ";
      drun-display-format: "{name}";
@@ -78,8 +78,6 @@
      background-color: #1e1e2e;
      text-color: #cdd6f4;
    }
-   
-   /* vim: ft=sass
-   '';
+   '' ;
 }
 
