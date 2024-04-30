@@ -1,83 +1,87 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.file.".config/rofi/config.rasi".text = 
-   ''
-   configuration {
-     display-drun: " ";
-     drun-display-format: "{name}";
-     font: "FiraCode Nerd Font 10";
-     show-icons: true;
-   }
-   
-   @theme "/dev/null"
-   
-   * {
-     border: 0;
-     margin: 0;
-     padding: 0;
-     spacing: 0;
-   }
-   
-   window {
-     width: 30%;
-     background-color: #11111b;
-     border: 2;
-     border-radius: 12px;
-     border-color: #89b4fa;
-   }
-   
-   element {
-     padding: 8 12;
-     background-color: transparent;
-     text-color: #cdd6f4;
-   }
-   
-   element selected {
-     text-color: #11111b;
-     background-color: #89b4fa;
-   }
-   
-   element-text {
-     background-color: transparent;
-     text-color: inherit;
-     vertical-align: 0.5;
-   }
-   
-   element-icon {
-     size: 20;
-     padding: 0 10 0 0;
-     background-color: transparent;
-   }
-   
-   entry {
-     padding: 12;
-     background-color: #1e1e2e;
-     text-color: #cdd6f4;
-   }
-   
-   inputbar {
-     children: [prompt, entry];
-     background-color: #11111b;
-   }
-   
-   listview {
-     background-color: #11111b;
-     columns: 1;
-     lines: 10;
-   }
-   
-   mainbox {
-     children: [inputbar, listview];
-     background-color: #11111b;
-   }
-   
-   prompt {
-     enabled: true;
-     padding: 12 0 0 12;
-     background-color: #1e1e2e;
-     text-color: #cdd6f4;
-   }
-   '' ;
+   programs.rofi = {
+     enable = true;
+     package = pkgs.rofi-wayland
+
+     extraConfig = {
+       display-drun = " ";
+       drun-display-format = "{name}";
+       font = "FiraCode Nerd Font 10";
+       show-icons = true;
+     };
+
+     theme = mkForce {
+      "@theme" = "/dev/null"
+
+      "*" {
+        border = mkLiteral "0";
+        margin = mkLiteral "0";
+        padding = mkLiteral "0";
+        spacing = mkLiteral "0";
+      };
+      
+      window {
+        width = mkLiteral "30%";
+        background-color = mkLiteral "#11111b";
+        border = mkLiteral "2";
+        border-radius = mkLiteral "12px";
+        border-color = mkLiteral "#89b4fa";
+      };
+      
+      element {
+        padding = mkLiteral "8 12";
+        background-color = mkLiteral "transparent";
+        text-color = mkLiteral "#cdd6f4";
+      };
+      
+      element selected {
+        text-color = mkLiteral "#11111b";
+        background-color = mkLiteral "#89b4fa";
+      };
+      
+      element-text {
+        background-color = mkLiteral "transparent";
+        text-color = mkLiteral "inherit";
+        vertical-align = mkLiteral "0.5";
+      };
+      
+      element-icon {
+        size = mkLiteral "20";
+        padding = mkLiteral "0 10 0 0";
+        background-color = mkLiteral "transparent";
+      };
+      
+      entry {
+        padding = mkLiteral "12";
+        background-color = mkLiteral "#1e1e2e";
+        text-color = mkLiteral "#cdd6f4";
+      };
+      
+      inputbar {
+        children = mkLiteral  [ "prompt", "entry" ];
+        background-color = mkLiteral "#11111b";
+      };
+      
+      listview {
+        background-color = mkLiteral "#11111b";
+        columns = "1";
+        lines = "10";
+      };
+      
+      mainbox {
+        children = map mkLiteral [ "inputbar", "listview" ];
+        background-color = "#11111b";
+      };
+      
+      prompt {
+        enabled = true;
+        padding = mkLiteral "12 0 0 12";
+        background-color = mkLiteral "#1e1e2e";
+        text-color = mkLiteral "#cdd6f4";
+      };
+     };
+   };
 }
 
