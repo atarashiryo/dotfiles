@@ -4,8 +4,9 @@
   environment.systemPackages = with pkgs; [
     kitty
     btop
-    neofetch
+    fastfetch
     nitch
+    lutgen
     distrobox
   ];
 

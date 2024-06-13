@@ -55,10 +55,7 @@
   # Xserver
   services.xserver = {
     enable = true;
-    xkb = { 
-      layout = "us"; 
-      variant = ""; 
-    };
+    layout = "us"; 
     excludePackages = with pkgs; [
       xterm
     ];
@@ -102,6 +99,7 @@
   # Fonts!
   fonts.packages = with pkgs; [
      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+     inter
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

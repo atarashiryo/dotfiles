@@ -5,8 +5,6 @@
     cinnamon.nemo
     unzip
     zip
-    unrar
-    rar
     p7zip
     xarchiver
   ];

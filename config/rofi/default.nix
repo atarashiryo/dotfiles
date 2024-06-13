@@ -4,10 +4,9 @@
   home.file.".config/rofi/config.rasi".text = 
    ''
    configuration {
-     display-drun: " ";
+     display-drun: "Search: ";
      drun-display-format: "{name}";
-     font: "FiraCode Nerd Font 10";
-     show-icons: true;
+     font: "Inter Regular 10";
    }
    
    @theme "/dev/null"

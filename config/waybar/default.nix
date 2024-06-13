@@ -4,10 +4,10 @@
   programs.waybar = {
     enable = true;                                                  
     settings = [{
-      "layer" = "bottom";
-      "position" = "bottom";
+      "layer" = "top";
+      "position" = "top";
       "height" = 34;
-      "margin-bottom" = 8;
+      "margin-top" = 8;
       "margin-left" = 10;
       "margin-right" = 10;
       "modules-left" = ["custom/rofi" "hyprland/workspaces"];
@@ -15,7 +15,7 @@
       "modules-right" = ["battery" "pulseaudio" "clock"];
       "custom/rofi" = {
         "format" = "";
-        "on-click" = "rofi -show drun";
+        "on-click" = "rofi -show drun -font ";
       };
       "hyprland/workspaces" = {
         "on-click" = "activate";
@@ -32,12 +32,12 @@
         };
       };
       "battery" = {
-          "format" = "󰁹 {capacity}%";
-          "format-charging" = "󰂄 {capacity}%";
+          "format" = "󰁹  {capacity}%";
+          "format-charging" = "󰂄  {capacity}%";
       };
       "pulseaudio" = {
-          "format" = "󰕾 {volume}%";
-          "format-muted" = "󰝟 {volume}%";
+          "format" = "󰕾  {volume}%";
+          "format-muted" = "󰝟  {volume}%";
           "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           "on-click-right" = "pavucontrol";
           "scroll-step" = 2;
@@ -49,7 +49,7 @@
     style = ''
       * {
           border: none;
-          font-family: FiraCode Nerd Font;
+          font-family: Inter Medium;
           font-size: 14px;
       }
       
@@ -109,7 +109,7 @@
           color: #11111b;
           background: #89b4fa;
           margin: 4px;
-          padding-left: 10px;
+          padding-left: 8px;
           padding-right: 8px;
           border-radius: 8px;
       }

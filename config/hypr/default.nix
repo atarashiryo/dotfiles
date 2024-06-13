@@ -108,7 +108,7 @@
       bind = $mainMod, Q, killactive,
       bind = $mainMod CTRL, Q, exit,
       bind = $mainMod, V, togglefloating,
-      bind = $mainMod, A, exec, rofi -show drun
+      bind = $mainMod, A, exec, rofi -show drun 
       bind = $mainMod, W, exec, waypaper
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, J, togglesplit, # dwindle
